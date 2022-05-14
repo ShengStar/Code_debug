@@ -397,3 +397,73 @@ aos  AP:95.60, 81.73, 78.62
 
 2022-05-13 08:05:56,111   INFO  Result is save to /data/lixusheng_data/code/OpenPCDet/output/kitti_models/pdv/default/eval/eval_with_train/epoch_80/val
 ```
+## 测试2
+```
+2022-05-14 13:20:36,402   INFO  Car AP@0.70, 0.70, 0.70:
+bbox AP:96.7304, 89.4421, 89.1318
+bev  AP:90.2677, 88.2294, 87.7435
+3d   AP:89.4383, 84.1664, 78.8734
+aos  AP:96.70, 89.35, 88.98
+Car AP_R40@0.70, 0.70, 0.70:
+bbox AP:98.2857, 94.5353, 94.1318
+bev  AP:95.3039, 91.1201, 88.8481
+3d   AP:92.3738, 85.0654, 82.7358
+aos  AP:98.26, 94.41, 93.93
+Car AP@0.70, 0.50, 0.50:
+bbox AP:96.7304, 89.4421, 89.1318
+bev  AP:96.8486, 94.7730, 89.1864
+3d   AP:96.7937, 94.6991, 89.1693
+aos  AP:96.70, 89.35, 88.98
+Car AP_R40@0.70, 0.50, 0.50:
+bbox AP:98.2857, 94.5353, 94.1318
+bev  AP:98.3586, 96.4425, 94.4312
+3d   AP:98.3364, 96.2662, 94.3755
+aos  AP:98.26, 94.41, 93.93
+Pedestrian AP@0.50, 0.50, 0.50:
+bbox AP:73.2836, 69.1904, 65.2962
+bev  AP:65.0850, 61.1961, 55.9766
+3d   AP:62.9159, 57.7832, 53.3633
+aos  AP:69.74, 65.60, 61.39
+Pedestrian AP_R40@0.50, 0.50, 0.50:
+bbox AP:73.6035, 69.5114, 66.1823
+bev  AP:66.1065, 60.2629, 55.6971
+3d   AP:62.9055, 56.6971, 52.0048
+aos  AP:69.70, 65.26, 61.54
+Pedestrian AP@0.50, 0.25, 0.25:
+bbox AP:73.2836, 69.1904, 65.2962
+bev  AP:76.1332, 72.4370, 69.6141
+3d   AP:76.1056, 72.3136, 69.3804
+aos  AP:69.74, 65.60, 61.39
+Pedestrian AP_R40@0.50, 0.25, 0.25:
+bbox AP:73.6035, 69.5114, 66.1823
+bev  AP:78.3697, 73.9876, 70.6371
+3d   AP:78.3335, 73.2419, 69.8264
+aos  AP:69.70, 65.26, 61.54
+Cyclist AP@0.50, 0.50, 0.50:
+bbox AP:89.2387, 81.4472, 76.8593
+bev  AP:86.8299, 74.0810, 71.1032
+3d   AP:85.3121, 72.1950, 68.2177
+aos  AP:88.86, 80.64, 76.09
+Cyclist AP_R40@0.50, 0.50, 0.50:
+bbox AP:94.8371, 82.6669, 78.0563
+bev  AP:91.9951, 76.3828, 71.7110
+3d   AP:90.1708, 73.2363, 68.6531
+aos  AP:94.35, 81.81, 77.24
+Cyclist AP@0.50, 0.25, 0.25:
+bbox AP:89.2387, 81.4472, 76.8593
+bev  AP:94.0226, 77.4707, 72.9264
+3d   AP:94.0226, 77.4690, 72.9264
+aos  AP:88.86, 80.64, 76.09
+Cyclist AP_R40@0.50, 0.25, 0.25:
+bbox AP:94.8371, 82.6669, 78.0563
+bev  AP:94.6474, 78.2960, 74.5813
+3d   AP:94.6474, 78.2955, 74.5755
+aos  AP:94.35, 81.81, 77.24
+
+2022-05-14 13:20:36,409   INFO  Result is save to /data/lixusheng_data/code/OpenPCDet/output/kitti_models/pdv/default/eval/eval_with_train/epoch_80/val
+2022-05-14 13:20:36,409   INFO  ****************Evaluation done.*****************
+2022-05-14 13:20:36,439   INFO  Epoch 80 has been evaluated
+2022-05-14 13:21:06,471   INFO  **********************End evaluation kitti_models/pdv(default)**********************pdv/default/ckpt 
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/OpenPCDet/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pdv.yaml
+
+```
