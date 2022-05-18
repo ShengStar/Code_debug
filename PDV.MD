@@ -467,3 +467,71 @@ aos  AP:94.35, 81.81, 77.24
 (openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/OpenPCDet/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pdv.yaml
 
 ```
+
+(openpcdet5.0_votr) lixusheng@cqu100:~/openpcdet5.0_votr/OpenPCDet/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pointrcnn.yaml
+2022-05-18 15:54:06,161   INFO  Car AP@0.70, 0.70, 0.70:
+bbox AP:90.6717, 89.3833, 88.4240
+bev  AP:89.9991, 87.0576, 86.4686
+3d   AP:88.5642, 78.3217, 76.9797
+aos  AP:90.65, 89.26, 88.24
+Car AP_R40@0.70, 0.70, 0.70:
+bbox AP:96.4133, 92.6085, 90.1417
+bev  AP:93.2129, 88.9557, 86.6039
+3d   AP:89.5141, 80.2759, 77.7003
+aos  AP:96.38, 92.47, 89.95
+Car AP@0.70, 0.50, 0.50:
+bbox AP:90.6717, 89.3833, 88.4240
+bev  AP:90.6347, 89.6764, 89.4309
+3d   AP:90.6313, 89.6496, 89.3721
+aos  AP:90.65, 89.26, 88.24
+Car AP_R40@0.70, 0.50, 0.50:
+bbox AP:96.4133, 92.6085, 90.1417
+bev  AP:96.4490, 94.9103, 92.6680
+3d   AP:96.4260, 92.9338, 90.5961
+aos  AP:96.38, 92.47, 89.95
+Pedestrian AP@0.50, 0.50, 0.50:
+bbox AP:74.2874, 66.4382, 62.4665
+bev  AP:63.2133, 58.1533, 52.2576
+3d   AP:61.1516, 53.3261, 49.0594
+aos  AP:71.35, 63.43, 59.19
+Pedestrian AP_R40@0.50, 0.50, 0.50:
+bbox AP:75.2913, 68.4328, 62.5538
+bev  AP:64.5904, 57.1917, 50.3103
+3d   AP:61.0417, 53.5803, 46.7310
+aos  AP:71.92, 64.82, 58.86
+Pedestrian AP@0.50, 0.25, 0.25:
+bbox AP:74.2874, 66.4382, 62.4665
+bev  AP:80.5983, 74.0432, 66.0714
+3d   AP:80.4966, 73.8927, 65.9192
+aos  AP:71.35, 63.43, 59.19
+Pedestrian AP_R40@0.50, 0.25, 0.25:
+bbox AP:75.2913, 68.4328, 62.5538
+bev  AP:81.6379, 75.3202, 67.9296
+3d   AP:81.4835, 75.0982, 67.6788
+aos  AP:71.92, 64.82, 58.86
+Cyclist AP@0.50, 0.50, 0.50:
+bbox AP:89.5010, 77.7783, 75.2158
+bev  AP:87.5530, 74.3291, 71.7942
+3d   AP:86.2862, 71.7099, 66.4056
+aos  AP:89.41, 76.99, 74.38
+Cyclist AP_R40@0.50, 0.50, 0.50:
+bbox AP:94.8953, 79.5890, 75.0800
+bev  AP:92.5773, 75.8636, 71.2651
+3d   AP:91.0775, 72.5100, 68.2431
+aos  AP:94.78, 78.66, 74.22
+Cyclist AP@0.50, 0.25, 0.25:
+bbox AP:89.5010, 77.7783, 75.2158
+bev  AP:93.9529, 75.7393, 73.0027
+3d   AP:93.9529, 75.7393, 73.0027
+aos  AP:89.41, 76.99, 74.38
+Cyclist AP_R40@0.50, 0.25, 0.25:
+bbox AP:94.8953, 79.5890, 75.0800
+bev  AP:95.7304, 77.1977, 72.6598
+3d   AP:95.7304, 77.1977, 72.6598
+aos  AP:94.78, 78.66, 74.22
+
+2022-05-18 15:54:06,169   INFO  Result is save to /home/lixusheng/openpcdet5.0_votr/OpenPCDet/output/kitti_models/pointrcnn/default/eval/eval_with_train/epoch_80/val
+2022-05-18 15:54:06,169   INFO  ****************Evaluation done.*****************
+2022-05-18 15:54:06,199   INFO  Epoch 80 has been evaluated
+2022-05-18 15:54:36,230   INFO  **********************End evaluation kitti_models/pointrcnn(default)**********************s/pointrcnn/default/ckpt 
+(openpcdet5.0_votr) lixusheng@cqu100:~/openpcdet5.0_votr/OpenPCDet/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pointrcnn.yaml
