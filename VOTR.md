@@ -895,8 +895,7 @@ aos  AP:95.94, 80.11, 76.88
 (openpcdet5.0_votr) lixusheng@cqu100:~/openpcdet5.0_votr/OpenPCDet/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pv_rcnn.yaml
 
 ```
-### waymo 数据处理
-#### 指令
+### 代码修改历史
 ```
 
 ```
