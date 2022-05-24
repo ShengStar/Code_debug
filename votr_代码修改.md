@@ -5,7 +5,7 @@
 ```
 ### 网络结构
 ```
-2022-05-24 10:27:48,679   INFO  VoTrRCNN(
+INFO  VoTrRCNN(
   (vfe): MeanVFE()
   (backbone_3d): VoxelTransformerV3(
     (input_transform): Sequential(
@@ -501,4 +501,18 @@ torch.Size([31963, 4])
 torch.Size([31963, 4])
 2
 torch.Size([31963, 16])
+```
+### 自注意力模块
+```
+self.mhead_attention = nn.MultiheadAttention( #官网实现标准注意力
+                embed_dim= input_channels,
+                num_heads= num_heads, # 4
+                dropout= dropout,
+                )
+attend_features, attend_weights = self.mhead_attention( #官网实现标准注意力
+            query = query_features,
+            key = key_features,
+            value = key_features,
+            key_padding_mask = key_mask,
+        )# [1, 40784, 16],[1, 22107, 32],[1, 10188, 64]?
 ```
