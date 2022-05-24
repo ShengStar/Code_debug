@@ -490,3 +490,15 @@
   )
 )
 ```
+### 执行流程
+```
+BACKBONE_3D:
+NAME: VoxelTransformerV3
+voxel_features, voxel_coords = batch_dict['voxel_features'], batch_dict['voxel_coords']
+batch_size = batch_dict['batch_size']
+voxel_features = self.input_transform(voxel_features)
+torch.Size([31963, 4])
+torch.Size([31963, 4])
+2
+torch.Size([31963, 16])
+```
