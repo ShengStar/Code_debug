@@ -3,7 +3,10 @@
 Point Density-Aware Voxels for LiDAR 3D Object Detection
 ## 运行指令
 ```
-Point Density-Aware Voxels for LiDAR 3D Object Detection
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv$ git add .
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv$ git commit -m 'first'
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv$ git push
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv/tools$ CUDA_VISIBLE_DEVICES=1 python train.py --cfg_file cfgs/kitti_models/pdv.yaml
 ```
 ## 结果
 ```
