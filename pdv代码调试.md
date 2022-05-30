@@ -694,8 +694,841 @@ aos  AP:94.32, 82.48, 79.31
 
 ### 实验 9fe90c0
 ```
+2022-05-30 12:43:41,973   INFO  ==> Loading parameters from checkpoint /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv/default/ckpt/checkpoint_epoch_69.pth to GPU
+2022-05-30 12:43:42,749   INFO  ==> Loading optimizer parameters from checkpoint /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv/default/ckpt/checkpoint_epoch_69.pth to GPU
+==> Checkpoint trained from version: pcdet+0.5.2+4d515fc+py9fe90c0
+2022-05-30 12:43:42,763   INFO  ==> Done
+2022-05-30 12:43:42,764   INFO  PDV(
+  (vfe): MeanVFE()
+  (backbone_3d): VoxelBackBone8x(
+    (conv_input): SparseSequential(
+      (0): SubMConv3d(4, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+      (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (conv1): SparseSequential(
+      (0): SparseSequential(
+        (0): SubMConv3d(16, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv2): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(16, 32, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv3): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(32, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv4): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(64, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[0, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv_out): SparseSequential(
+      (0): SparseConv3d(64, 128, kernel_size=[3, 1, 1], stride=[2, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+      (1): BatchNorm1d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (mhead_attention): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=16, out_features=16, bias=True)
+    )
+    (mhead_attention_1): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=16, out_features=16, bias=True)
+    )
+    (mhead_attention_2): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=32, out_features=32, bias=True)
+    )
+    (mhead_attention_3): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+    )
+    (mhead_attention_4): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+    )
+  )
+  (map_to_bev_module): HeightCompression()
+  (pfe): None
+  (backbone_2d): BaseBEVBackbone(
+    (blocks): ModuleList(
+      (0): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+      (1): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), bias=False)
+        (2): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+    )
+    (deblocks): ModuleList(
+      (0): Sequential(
+        (0): ConvTranspose2d(128, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): Sequential(
+        (0): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+  )
+  (dense_head): AnchorHeadSingle(
+    (cls_loss_func): SigmoidFocalClassificationLoss()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (dir_loss_func): WeightedCrossEntropyLoss()
+    (conv_cls): Conv2d(512, 18, kernel_size=(1, 1), stride=(1, 1))
+    (conv_box): Conv2d(512, 42, kernel_size=(1, 1), stride=(1, 1))
+    (conv_dir_cls): Conv2d(512, 12, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (point_head): None
+  (roi_head): PDVHead(
+    (proposal_target_layer): ProposalTargetLayer()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (roi_grid_pool_layers): ModuleList(
+      (0): StackSAModuleMSGAttention(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (1): StackSAModuleMSGAttention(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+    )
+    (attention_head): TransformerEncoder(
+      (pos_encoder): FeedForwardPositionalEncoding(
+        (ffn): Sequential(
+          (0): Conv1d(4, 64, kernel_size=(1,), stride=(1,))
+          (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv1d(64, 128, kernel_size=(1,), stride=(1,))
+        )
+      )
+      (transformer_encoder): TransformerEncoder(
+        (layers): ModuleList(
+          (0): TransformerEncoderLayer(
+            (self_attn): MultiheadAttention(
+              (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+            )
+            (linear1): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+            (linear2): Linear(in_features=128, out_features=128, bias=True)
+            (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            (dropout1): Dropout(p=0.1, inplace=False)
+            (dropout2): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (shared_fc_layer): Sequential(
+      (0): Conv1d(27648, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+    )
+    (reg_layers): Sequential(
+      (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 7, kernel_size=(1,), stride=(1,))
+    )
+    (cls_layers): Sequential(
+      (0): Conv1d(260, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 1, kernel_size=(1,), stride=(1,))
+    )
+  )
+)
+2022-05-30 12:43:42,767   INFO  **********************Start training kitti_models/pdv(default)**********************
+epochs:   0%|                                                                                                                                                                                                             | 0/11 [00:00<?, ?it/s../pcdet/utils/voxel_aggregation_utils.py:160: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  voxel_idxs[:, 1:] = centroid_voxel_idxs_first[:, 1:] // grid_scaling
+epochs:  18%|????????????????????                                                                                          | 2/11 [1:23:30<4:52:33, 1950.35s/it, loss=0.75, lr=0.000742, d_time=0.00(0.00), f_time=0.63(0.61), b_time=1.04(1.05)]
+train:  57%|?????????????????????????????????????????????????????????????????????????????????????????????????????                                                                           | 1057/1856 [18:29<13:56,  1.05s/it, total_it=132832]epochs:  18%|????????????????????                                                                                         | 2/11 [1:23:31<4:52:33, 1950.35s/it, loss=0.956, lr=0.000742, d_time=0.00(0.00), f_time=0.6epochs:  18%|????????????????????                                                                                         | 2/11 [1:23:31<4:52:33, 1950.35s/it, loss=0.956, lr=0.000742, d_time=0.00(0.00), f_time=0.62(0.61), b_time=1.06(1.05)]
+train:  57%|????????????????????????                  | 1058/1856 [18:30<13:53,  1.04s/it, total_it=132833]epochs:  18%|?| 2/11 [1:23:32<4:52:33, 1950.35s/it, loss=0.904, lr=0.000742, d_time=0.00(0.00), f_time=0.62                                                                                                           train: 100%|????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 1856/1856 [32:34<00:00,  1.05s/it, total_it=148480]
+epochs: 100%|??????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 11/11 [5:57:54<00:00, 1952.27s/it, loss=0.778, lr=1e-7, d_time=0.00(0.00), f_time=0.63(0.62), b_time=1.08(1.05)]
+2022-05-30 18:41:37,862   INFO  **********************End training kitti_models/pdv(default)**********************
+
+
+
+2022-05-30 18:41:37,862   INFO  **********************Start evaluation kitti_models/pdv(default)**********************
+2022-05-30 18:41:37,864   INFO  Loading KITTI dataset
+2022-05-30 18:41:37,980   INFO  Total samples for KITTI dataset: 3769
+2022-05-30 18:41:37,982   INFO  ==> Loading parameters from checkpoint /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv/default/ckpt/checkpoint_epoch_80.pth to GPU
+2022-05-30 18:41:38,648   INFO  ==> Checkpoint trained from version: pcdet+0.5.2+4d515fc+py9fe90c0
+2022-05-30 18:41:38,667   INFO  ==> Done (loaded 292/292)
+2022-05-30 18:41:38,672   INFO  *************** EPOCH 80 EVALUATION *****************
+eval: 100%|???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 1885/1885 [08:46<00:00,  3.58it/s, recall_0.3=(17064, 17071) / 17558]
+2022-05-30 18:50:24,718   INFO  *************** Performance of EPOCH 80 *****************
+2022-05-30 18:50:24,718   INFO  Generate label finished(sec_per_example: 0.1396 second).
+2022-05-30 18:50:24,718   INFO  recall_roi_0.3: 0.971865
+2022-05-30 18:50:24,718   INFO  recall_rcnn_0.3: 0.972263
+2022-05-30 18:50:24,718   INFO  recall_roi_0.5: 0.932395
+2022-05-30 18:50:24,718   INFO  recall_rcnn_0.5: 0.939572
+2022-05-30 18:50:24,718   INFO  recall_roi_0.7: 0.705832
+2022-05-30 18:50:24,718   INFO  recall_rcnn_0.7: 0.759711
+2022-05-30 18:50:24,724   INFO  Average predicted number of objects(3769 samples): 8.884
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (30) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (24) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (35) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (80) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/core/typed_passes.py:330: NumbaPerformanceWarning: 
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.readthedocs.io/en/stable/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (30) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (24) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (35) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/core/typed_passes.py:330: NumbaPerformanceWarning: 
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.readthedocs.io/en/stable/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (30) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (24) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (35) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (80) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+2022-05-30 18:50:56,930   INFO  Car AP@0.70, 0.70, 0.70:
+bbox AP:96.5165, 89.4871, 89.2011
+bev  AP:90.2632, 88.1777, 87.7644
+3d   AP:89.4386, 83.7297, 78.8167
+aos  AP:96.48, 89.42, 89.07
+Car AP_R40@0.70, 0.70, 0.70:
+bbox AP:98.4554, 94.4993, 94.2269
+bev  AP:95.2913, 90.9875, 90.4830
+3d   AP:92.3293, 84.8155, 82.6887
+aos  AP:98.43, 94.41, 94.05
+Car AP@0.70, 0.50, 0.50:
+bbox AP:96.5165, 89.4871, 89.2011
+bev  AP:96.7273, 94.6095, 89.2244
+3d   AP:96.6866, 89.4436, 89.1873
+aos  AP:96.48, 89.42, 89.07
+Car AP_R40@0.70, 0.50, 0.50:
+bbox AP:98.4554, 94.4993, 94.2269
+bev  AP:98.4749, 96.3786, 94.4780
+3d   AP:98.4582, 94.5434, 94.3900
+aos  AP:98.43, 94.41, 94.05
+Pedestrian AP@0.50, 0.50, 0.50:
+bbox AP:72.8012, 68.3039, 63.9320
+bev  AP:65.5870, 60.3041, 56.9415
+3d   AP:64.6688, 58.1422, 53.7247
+aos  AP:69.07, 64.37, 59.93
+Pedestrian AP_R40@0.50, 0.50, 0.50:
+bbox AP:73.3623, 67.9864, 64.0062
+bev  AP:66.5688, 59.5265, 55.4225
+3d   AP:65.1383, 57.4090, 52.4930
+aos  AP:69.09, 63.55, 59.38
+Pedestrian AP@0.50, 0.25, 0.25:
+bbox AP:72.8012, 68.3039, 63.9320
+bev  AP:76.0312, 71.8945, 68.6141
+3d   AP:76.0287, 71.8037, 68.4498
+aos  AP:69.07, 64.37, 59.93
+Pedestrian AP_R40@0.50, 0.25, 0.25:
+bbox AP:73.3623, 67.9864, 64.0062
+bev  AP:78.1523, 72.5711, 68.7673
+3d   AP:78.1487, 72.4743, 68.6617
+aos  AP:69.09, 63.55, 59.38
+Cyclist AP@0.50, 0.50, 0.50:
+bbox AP:88.6680, 81.4276, 76.1801
+bev  AP:87.0362, 74.5650, 71.7635
+3d   AP:86.3168, 73.1022, 70.2063
+aos  AP:88.21, 80.83, 75.66
+Cyclist AP_R40@0.50, 0.50, 0.50:
+bbox AP:93.8286, 82.1699, 78.9474
+bev  AP:91.8610, 76.6100, 73.1540
+3d   AP:91.0288, 74.0348, 70.6241
+aos  AP:93.30, 81.56, 78.30
+Cyclist AP@0.50, 0.25, 0.25:
+bbox AP:88.6680, 81.4276, 76.1801
+bev  AP:87.2451, 77.8930, 72.6143
+3d   AP:87.2451, 77.8930, 72.6143
+aos  AP:88.21, 80.83, 75.66
+Cyclist AP_R40@0.50, 0.25, 0.25:
+bbox AP:93.8286, 82.1699, 78.9474
+bev  AP:92.1869, 78.3698, 75.0324
+3d   AP:92.1869, 78.3698, 75.0324
+aos  AP:93.30, 81.56, 78.30
+
+2022-05-30 18:50:56,938   INFO  Result is save to /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv/default/eval/eval_with_train/epoch_80/val
+2022-05-30 18:50:56,938   INFO  ****************Evaluation done.*****************
+2022-05-30 18:50:56,966   INFO  Epoch 80 has been evaluated
+2022-05-30 18:51:26,997   INFO  **********************End evaluation kitti_models/pdv(default)**********************models/pdv/default/ckpt 
 
 ```
 ### 实验 76e5ec7+norm
 ```
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1639180594101/work/aten/src/ATen/native/TensorShape.cpp:2157.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+2022-05-28 18:36:15,417   INFO  PDV(
+  (vfe): MeanVFE()
+  (backbone_3d): VoxelBackBone8x(
+    (conv_input): SparseSequential(
+      (0): SubMConv3d(4, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+      (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (conv1): SparseSequential(
+      (0): SparseSequential(
+        (0): SubMConv3d(16, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv2): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(16, 32, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv3): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(32, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv4): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d(64, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[0, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv_out): SparseSequential(
+      (0): SparseConv3d(64, 128, kernel_size=[3, 1, 1], stride=[2, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+      (1): BatchNorm1d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (mhead_attention_1): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=16, out_features=16, bias=True)
+    )
+    (mhead_attention_2): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=32, out_features=32, bias=True)
+    )
+    (mhead_attention_3): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+    )
+    (mhead_attention_4): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+    )
+    (norm1): BatchNorm1d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (norm3): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (norm4): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (map_to_bev_module): HeightCompression()
+  (pfe): None
+  (backbone_2d): BaseBEVBackbone(
+    (blocks): ModuleList(
+      (0): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+      (1): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), bias=False)
+        (2): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+    )
+    (deblocks): ModuleList(
+      (0): Sequential(
+        (0): ConvTranspose2d(128, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): Sequential(
+        (0): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+  )
+  (dense_head): AnchorHeadSingle(
+    (cls_loss_func): SigmoidFocalClassificationLoss()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (dir_loss_func): WeightedCrossEntropyLoss()
+    (conv_cls): Conv2d(512, 18, kernel_size=(1, 1), stride=(1, 1))
+    (conv_box): Conv2d(512, 42, kernel_size=(1, 1), stride=(1, 1))
+    (conv_dir_cls): Conv2d(512, 12, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (point_head): None
+  (roi_head): PDVHead(
+    (proposal_target_layer): ProposalTargetLayer()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (roi_grid_pool_layers): ModuleList(
+      (0): StackSAModuleMSGAttention(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (1): StackSAModuleMSGAttention(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+    )
+    (attention_head): TransformerEncoder(
+      (pos_encoder): FeedForwardPositionalEncoding(
+        (ffn): Sequential(
+          (0): Conv1d(4, 64, kernel_size=(1,), stride=(1,))
+          (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Conv1d(64, 128, kernel_size=(1,), stride=(1,))
+        )
+      )
+      (transformer_encoder): TransformerEncoder(
+        (layers): ModuleList(
+          (0): TransformerEncoderLayer(
+            (self_attn): MultiheadAttention(
+              (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+            )
+            (linear1): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+            (linear2): Linear(in_features=128, out_features=128, bias=True)
+            (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+            (dropout1): Dropout(p=0.1, inplace=False)
+            (dropout2): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (shared_fc_layer): Sequential(
+      (0): Conv1d(27648, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+    )
+    (reg_layers): Sequential(
+      (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 7, kernel_size=(1,), stride=(1,))
+    )
+    (cls_layers): Sequential(
+      (0): Conv1d(260, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3, inplace=False)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 1, kernel_size=(1,), stride=(1,))
+    )
+  )
+)
+2022-05-28 18:36:15,420   INFO  **********************Start training kitti_models/pdv_1(default)**********************
+epochs:   0%|                                                                                                                                                                                                             | 0/80 [00:00<?, ?it/s../pcdet/utils/voxel_aggregation_utils.py:160: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  voxel_idxs[:, 1:] = centroid_voxel_idxs_first[:, 1:] // grid_scaling
+train: 100%|????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 1856/1856 [15:05<00:00,  2.05it/s, total_it=148480]
+epochs: 100%|?????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 80/80 [49:39:47<00:00, 2234.85s/it, loss=0.775, lr=1e-7, d_time=0.00(0.00), f_time=0.18(0.19), b_time=0.48(0.49)]
+2022-05-30 20:16:03,340   INFO  **********************End training kitti_models/pdv_1(default)**********************
+
+
+
+2022-05-30 20:16:03,353   INFO  **********************Start evaluation kitti_models/pdv_1(default)**********************
+2022-05-30 20:16:03,354   INFO  Loading KITTI dataset
+2022-05-30 20:16:03,459   INFO  Total samples for KITTI dataset: 3769
+2022-05-30 20:16:03,461   INFO  ==> Loading parameters from checkpoint /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv_1/default/ckpt/checkpoint_epoch_80.pth to GPU
+2022-05-30 20:16:03,576   INFO  ==> Checkpoint trained from version: pcdet+0.5.2+4d515fc+py76e5ec7
+2022-05-30 20:16:03,589   INFO  ==> Done (loaded 308/308)
+2022-05-30 20:16:03,592   INFO  *************** EPOCH 80 EVALUATION *****************
+eval: 100%|???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????| 1885/1885 [02:54<00:00, 10.79it/s, recall_0.3=(17016, 17023) / 17558]
+2022-05-30 20:18:58,359   INFO  *************** Performance of EPOCH 80 *****************
+2022-05-30 20:18:58,360   INFO  Generate label finished(sec_per_example: 0.0464 second).
+2022-05-30 20:18:58,360   INFO  recall_roi_0.3: 0.969131
+2022-05-30 20:18:58,360   INFO  recall_rcnn_0.3: 0.969530
+2022-05-30 20:18:58,360   INFO  recall_roi_0.5: 0.931256
+2022-05-30 20:18:58,360   INFO  recall_rcnn_0.5: 0.935414
+2022-05-30 20:18:58,360   INFO  recall_roi_0.7: 0.704807
+2022-05-30 20:18:58,360   INFO  recall_rcnn_0.7: 0.757831
+2022-05-30 20:18:58,366   INFO  Average predicted number of objects(3769 samples): 8.795
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (30) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (35) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (24) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (80) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/core/typed_passes.py:330: NumbaPerformanceWarning: 
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.readthedocs.io/en/stable/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/core/typed_passes.py:330: NumbaPerformanceWarning: 
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.readthedocs.io/en/stable/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (30) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (20) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (25) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (35) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (24) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+/home/lixusheng/anaconda3/envs/openpcdet5.0_PDV/lib/python3.7/site-packages/numba/cuda/compiler.py:726: NumbaPerformanceWarning: Grid size (80) < 2 * SM count (112) will likely result in GPU under utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))
+2022-05-30 20:19:23,579   INFO  Car AP@0.70, 0.70, 0.70:
+bbox AP:95.8993, 89.4571, 89.1571
+bev  AP:90.1724, 87.9500, 87.5444
+3d   AP:89.3819, 83.7675, 78.7863
+aos  AP:95.88, 89.38, 89.02
+Car AP_R40@0.70, 0.70, 0.70:
+bbox AP:98.1584, 94.5190, 94.1023
+bev  AP:93.0703, 90.7407, 88.6773
+3d   AP:92.0263, 84.7986, 82.6515
+aos  AP:98.14, 94.41, 93.91
+Car AP@0.70, 0.50, 0.50:
+bbox AP:95.8993, 89.4571, 89.1571
+bev  AP:95.9292, 94.5274, 89.1797
+3d   AP:95.8689, 89.4383, 89.1575
+aos  AP:95.88, 89.38, 89.02
+Car AP_R40@0.70, 0.50, 0.50:
+bbox AP:98.1584, 94.5190, 94.1023
+bev  AP:98.1543, 96.1743, 94.3885
+3d   AP:98.1299, 94.5454, 94.3450
+aos  AP:98.14, 94.41, 93.91
+Pedestrian AP@0.50, 0.50, 0.50:
+bbox AP:74.3676, 69.3915, 65.7445
+bev  AP:65.6072, 60.5234, 55.7278
+3d   AP:64.1036, 57.8504, 53.4424
+aos  AP:70.35, 65.21, 61.57
+Pedestrian AP_R40@0.50, 0.50, 0.50:
+bbox AP:74.9136, 69.6329, 66.7613
+bev  AP:66.4927, 59.8443, 55.7624
+3d   AP:63.7926, 56.8959, 52.4356
+aos  AP:70.55, 65.07, 61.97
+Pedestrian AP@0.50, 0.25, 0.25:
+bbox AP:74.3676, 69.3915, 65.7445
+bev  AP:77.1227, 73.1057, 70.9240
+3d   AP:77.0966, 72.9549, 70.7947
+aos  AP:70.35, 65.21, 61.57
+Pedestrian AP_R40@0.50, 0.25, 0.25:
+bbox AP:74.9136, 69.6329, 66.7613
+bev  AP:79.4051, 74.6398, 71.7834
+3d   AP:79.3703, 73.9182, 71.0240
+aos  AP:70.55, 65.07, 61.97
+Cyclist AP@0.50, 0.50, 0.50:
+bbox AP:92.6389, 82.0525, 76.5671
+bev  AP:89.4619, 73.6579, 71.1361
+3d   AP:91.0623, 71.7930, 68.0179
+aos  AP:92.51, 81.59, 76.19
+Cyclist AP_R40@0.50, 0.50, 0.50:
+bbox AP:95.5714, 83.9342, 79.4228
+bev  AP:92.1251, 75.9227, 72.0158
+3d   AP:91.5107, 72.5864, 68.0922
+aos  AP:95.45, 83.47, 78.98
+Cyclist AP@0.50, 0.25, 0.25:
+bbox AP:92.6389, 82.0525, 76.5671
+bev  AP:90.8385, 78.8203, 75.9479
+3d   AP:90.8334, 78.8163, 75.9420
+aos  AP:92.51, 81.59, 76.19
+Cyclist AP_R40@0.50, 0.25, 0.25:
+bbox AP:95.5714, 83.9342, 79.4228
+bev  AP:93.6711, 79.7740, 76.0957
+3d   AP:93.6696, 79.7723, 76.0713
+aos  AP:95.45, 83.47, 78.98
+
+2022-05-30 20:19:23,587   INFO  Result is save to /data/lixusheng_data/code/my_openpcdet_pdv/output/kitti_models/pdv_1/default/eval/eval_with_train/epoch_80/val
+2022-05-30 20:19:23,587   INFO  ****************Evaluation done.*****************
+2022-05-30 20:19:23,617   INFO  Epoch 80 has been evaluated
+2022-05-30 20:19:53,648   INFO  **********************End evaluation kitti_models/pdv_1(default)**********************dels/pdv_1/default/ckpt 
+(openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv/tools$ 
+
 ```
