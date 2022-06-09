@@ -1530,5 +1530,4 @@ aos  AP:95.45, 83.47, 78.98
 2022-05-30 20:19:23,617   INFO  Epoch 80 has been evaluated
 2022-05-30 20:19:53,648   INFO  **********************End evaluation kitti_models/pdv_1(default)**********************dels/pdv_1/default/ckpt 
 (openpcdet5.0_PDV) lixusheng@cqu100:/data/lixusheng_data/code/my_openpcdet_pdv/tools$ 
-
 ```
